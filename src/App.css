@@ -36,3 +36,104 @@
     transform: rotate(360deg);
   }
 }
+
+.btn {
+  border-radius: 100rem;
+  padding: 12px 16px;
+  background: linear-gradient(170deg, #61dbfb, #2e849b) !important;
+  width: 10rem;
+  border: none;
+  color: white;
+  font-weight: 600;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-container {
+  background-color: white;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 1em;
+}
+
+.form-group {
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.social-login {
+  background-color: white;
+  color: #555;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-login.facebook {
+  border-color: #3b5998;
+}
+
+.social-login.google {
+  border-color: #db4437;
+}
+
+.social-login.apple {
+  border-color: #000;
+}
+
+.separator {
+  margin: 1em 0;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+.error-message {
+  color: red;
+  margin-top: 1em;
+  display: block;
+}
+
+.doctor-signup {
+  background-color: white;
+  color: #555;
+  border: 1px solid #ddd;
+}

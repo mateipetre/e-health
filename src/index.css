@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.calendar-container {
+  width: 300px; /* Adjust width as needed */
+  max-width: 100%;
+  background-color: #e6f7ff; /* Very bright blue pastel */
+  padding: 20px;
+  border-radius: 20px; /* Rounded corners */
+  border: 4px solid #357ca5; /* Dark blue pastel border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Lato', sans-serif; /* Set font to Lato */
+}
+
+.react-calendar {
+  width: 100%;
+  border: none;
+  font-family: 'Lato', sans-serif; /* Set font to Lato */
+}
+
+.react-calendar__tile {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif; /* Set font to Lato */
+}
+
+.sunday {
+  background-color: #f8f8f8; /* Example: Background color for Sundays */
+  color: red;
+  font-family: 'Lato', sans-serif; /* Set font to Lato */
+}
+
