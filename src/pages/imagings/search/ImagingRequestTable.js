@@ -4,14 +4,39 @@ import format from 'date-fns/format';
 import Loading from '../../../app-components/Loading';
 import useTranslator from '../../../hooks/useTranslator';
 import { extractUsername } from '../../../util/extractUsername';
-import useImagingSearch from '../hooks/useImagingSearch';
 
-const ImagingRequestTable = ({ searchRequest }) => {
+const ImagingRequestTable = () => {
   const { t } = useTranslator();
-  const { data, status } = useImagingSearch(searchRequest) || { data: [], status: 'loading' };
+
+  // Hardcoded data
+  const data = [
+    {
+      id: 1,
+      code: 'IMG001',
+      type: 'X-Ray',
+      requestedOn: '2023-08-01T10:30:00Z',
+      fullName: 'John Doe',
+      requestedByFullName: 'Dr. Smith',
+      status: 'Requested',
+    },
+    {
+      id: 2,
+      code: 'IMG002',
+      type: 'MRI',
+      requestedOn: '2023-08-02T11:00:00Z',
+      fullName: 'Jane Doe',
+      requestedByFullName: 'Dr. Johnson',
+      status: 'Completed',
+    },
+  ];
+  const status = 'success';
 
   if (status === 'loading') {
     return <Loading />;
+  }
+
+  if (data.length === 0 && status === 'success') {
+    return <div>No imaging requests found</div>;
   }
 
   return (

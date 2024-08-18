@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'; // Imp
 import App from './App';
 import store from './store'; // Adjust the import path if necessary
 import '@fontsource/abeezee';
+import './index.css'
 
 // Create a QueryClient instance
 const queryClient = new QueryClient();
