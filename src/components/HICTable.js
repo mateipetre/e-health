@@ -6,7 +6,7 @@ import { IconButton } from '@mui/material';
 
 const StyledTableContainer = styled(TableContainer)({
   borderRadius: '8px',
-  boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.1)',
+  boxShadow: '0px 2px 8px rgba(0, 0.5, 0.5, 0.5)',
   marginBottom: '16px',
 });
 
@@ -15,7 +15,7 @@ const StyledTable = styled(Table)({
 });
 
 const StyledTableHead = styled(TableHead)({
-  backgroundColor: '#eeeeea',
+  backgroundColor: '#b5ccfe',
 });
 
 const StyledTableCell = styled(TableCell)(({ textColor }) => ({
@@ -26,7 +26,7 @@ const StyledTableCell = styled(TableCell)(({ textColor }) => ({
 
 const StyledTableRow = styled(TableRow)({
   '&:nth-of-type(odd)': {
-    backgroundColor: '#fafafa',
+    backgroundColor: '#e3ecff',
   },
 });
 

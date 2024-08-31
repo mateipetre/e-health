@@ -19,15 +19,14 @@ const DoctorProfile = () => {
   const [permissions, setPermissions] = useState([]);
   const [avatar, setAvatar] = useState(null);
 
-  // Default values
-  const [position, setPosition] = useState('Surgeon Cardiologist');
-  const [associatedHospital, setAssociatedHospital] = useState('Spitalul Universitar de Urgență București');
-  const [experience, setExperience] = useState('20 years');
-  const [languages, setLanguages] = useState(['Romanian', 'English']);
-  const [specialties, setSpecialties] = useState(['Surgery', 'Cardiology', 'Pediatrics']);
-  const [phoneNumber, setPhoneNumber] = useState('0210 304 300');
+  const [position, setPosition] = useState('');
+  const [associatedHospital, setAssociatedHospital] = useState('');
+  const [experience, setExperience] = useState('');
+  const [languages, setLanguages] = useState([]);
+  const [specialties, setSpecialties] = useState([]);
+  const [phoneNumber, setPhoneNumber] = useState('');
 
-  // Fetch user data by ID
+  // Fetch user data by ID (from port 8080)
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -36,6 +35,7 @@ const DoctorProfile = () => {
         setUser(userData);
         setRoles(userData.roles || []);
         setPermissions(userData.access || []);
+        setAvatar(userData.profileImage || null);
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
@@ -44,23 +44,32 @@ const DoctorProfile = () => {
     fetchUserData();
   }, []);
 
-  // Load the avatar and other details from local storage
+  // Fetch doctor details (from port 5000)
+  useEffect(() => {
+    const fetchDoctorDetails = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/doctors/66cbb31025bfefa0333b2882');
+        const doctorData = response.data;
+        setPosition(doctorData.position || '');
+        setAssociatedHospital(doctorData.associatedHospital || '');
+        setExperience(doctorData.experience || '');
+        setLanguages(doctorData.languages || []);
+        setSpecialties(doctorData.specialties || []);
+        setPhoneNumber(doctorData.phoneNumber || '');
+      } catch (error) {
+        console.error('Error fetching doctor details:', error);
+      }
+    };
+
+    fetchDoctorDetails();
+  }, []);
+
+  // Load the avatar from local storage
   useEffect(() => {
     const storedAvatar = localStorage.getItem('avatar');
-    const storedPosition = localStorage.getItem('position');
-    const storedHospital = localStorage.getItem('associatedHospital');
-    const storedExperience = localStorage.getItem('experience');
-    const storedLanguages = JSON.parse(localStorage.getItem('languages'));
-    const storedSpecialties = JSON.parse(localStorage.getItem('specialties'));
-    const storedPhoneNumber = localStorage.getItem('phoneNumber');
-
-    if (storedAvatar) setAvatar(storedAvatar);
-    if (storedPosition) setPosition(storedPosition);
-    if (storedHospital) setAssociatedHospital(storedHospital);
-    if (storedExperience) setExperience(storedExperience);
-    if (storedLanguages) setLanguages(storedLanguages);
-    if (storedSpecialties) setSpecialties(storedSpecialties);
-    if (storedPhoneNumber) setPhoneNumber(storedPhoneNumber);
+    if (storedAvatar) {
+      setAvatar(storedAvatar);
+    }
   }, []);
 
   // Handle avatar upload and save to local storage
@@ -72,20 +81,6 @@ const DoctorProfile = () => {
       localStorage.setItem('avatar', avatarUrl);
     }
   };
-
-  // Handle saving the new details to local storage
-  const saveDoctorDetailsToLocal = () => {
-    localStorage.setItem('position', position);
-    localStorage.setItem('associatedHospital', associatedHospital);
-    localStorage.setItem('experience', experience);
-    localStorage.setItem('languages', JSON.stringify(languages));
-    localStorage.setItem('specialties', JSON.stringify(specialties));
-    localStorage.setItem('phoneNumber', phoneNumber);
-  };
-
-  useEffect(() => {
-    saveDoctorDetailsToLocal();
-  }, [position, associatedHospital, experience, languages, specialties, phoneNumber]);
 
   return (
     <Box sx={{ display: 'flex', height: '100vh', p: 3, backgroundColor: '#ffffff', fontFamily: 'ABeeZee, sans-serif' }}>

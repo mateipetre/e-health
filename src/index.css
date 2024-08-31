@@ -61,3 +61,17 @@ body {
   font-family: 'Lato', sans-serif; /* Set font to Lato */
 }
 
+.unavailable-date {
+  background-color: #ff6f6f;
+  color: white;
+}
+
+/* NewAppointment.css */
+
+.opaque-container {
+  background-color: white;
+  opacity: 1;
+  z-index: 1000; /* Ensure it's above other elements */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: to add a subtle shadow */
+  padding: 10px; /* Optional: to give some padding inside the container */
+}

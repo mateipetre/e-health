@@ -137,3 +137,9 @@ button:hover {
   color: #555;
   border: 1px solid #ddd;
 }
+
+.unavailable-date {
+  background-color: #ffcccc !important; /* Light red background */
+  color: #ff0000 !important; /* Red text */
+  pointer-events: none; /* Prevent clicks */
+}

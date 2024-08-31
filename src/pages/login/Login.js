@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Button, TextField, Box, Typography, Grid } from '@mui/material';
 import { ErrorToaster } from '../../components/ToasterTypes';
-import { Google as GoogleIcon, PersonAdd, Chat } from '@mui/icons-material';
+import { Google as GoogleIcon, Chat } from '@mui/icons-material';
 import { Link as RouterLink, Link } from 'react-router-dom';
+import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -87,10 +88,10 @@ const Login = () => {
       >
         <Button
           component={Link}
-          to="/doctor-registration"
+          to="/meeting"
           variant="contained"
           color="primary"
-          startIcon={<PersonAdd />}
+          startIcon={<VideoCameraFrontIcon  />}
           sx={{
             textTransform: 'none',
             backgroundColor: '#2196f3', // Blue color
@@ -101,11 +102,11 @@ const Login = () => {
             fontSize: '1rem',
           }}
         >
-          Register as Doctor
+          Start Scheduled Meeting
         </Button>
         <Button
           component={Link}
-          to="/chatbot"
+          to="/assistant"
           variant="contained"
           color="secondary"
           startIcon={<Chat />}
@@ -119,7 +120,7 @@ const Login = () => {
             fontSize: '1rem',
           }}
         >
-          Ask Chatbot
+          Ask Assistant
         </Button>
       </Box>
 
@@ -156,7 +157,7 @@ const Login = () => {
           />
         </Grid>
         <Grid item xs={12} md={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingRight: '25%' }}>
-          <Box sx={{ maxWidth: 400, width: '100%', px: 3 }}>
+          <Box sx={{ maxWidth: 450, width: '100%', px: 3 }}>
             <Grid container alignItems="center" justifyContent="center"> 
               <Grid item>
                 <img

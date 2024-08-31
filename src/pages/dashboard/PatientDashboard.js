@@ -13,7 +13,9 @@ import DiagnosisIcon from '@mui/icons-material/LocalHospital';
 import CareGoalsIcon from '@mui/icons-material/Stars';
 import MedicationsIcon from '@mui/icons-material/Medication';
 import ChatIcon from '@mui/icons-material/Chat';
+import IncidentIcon from '@mui/icons-material/Warning';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import NotesIcon from '@mui/icons-material/Note';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MessageIcon from '@mui/icons-material/Message';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
@@ -177,6 +179,14 @@ const pieData = {
             <ListItemIcon><MedicationsIcon sx={{ color: '#ffffff' }} /></ListItemIcon>
             <ListItemText primary="Medications" />
           </ListItem>
+          <ListItem button component={RouterLink} to="/incidents">
+            <ListItemIcon><IncidentIcon sx={{ color: '#ffffff' }} /></ListItemIcon>
+            <ListItemText primary="Incidents" />
+          </ListItem>
+          <ListItem button component={RouterLink} to="/notes">
+            <ListItemIcon><NotesIcon sx={{ color: '#ffffff' }} /></ListItemIcon>
+            <ListItemText primary="Notes" />
+          </ListItem>
         </List>
 
         {!sidebarOpen && (
@@ -304,7 +314,7 @@ const pieData = {
 
             <Button
               component={RouterLink}
-              to="/chatbot"
+              to="/assistant"
               variant="contained"
               color="secondary"
               startIcon={<ChatIcon />}
@@ -316,7 +326,7 @@ const pieData = {
                 textTransform: 'none',
               }}
             >
-              Ask Chatbot
+              Ask Assistant
             </Button>
 
             <Button

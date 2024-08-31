@@ -27,6 +27,7 @@ const UserProfile = () => {
         setUser(userData);
         setRoles(userData.roles || []);
         setPermissions(userData.access || []);
+        setAvatar(userData.profileImage || null);
       } catch (error) {
         console.error('Error fetching user data:', error);
       }

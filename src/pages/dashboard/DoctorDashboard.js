@@ -10,12 +10,13 @@ import PatientIcon from '@mui/icons-material/Person';
 import LabIcon from '@mui/icons-material/LocalHospital'; // Example icon
 import IncidentIcon from '@mui/icons-material/Warning'; // Example icon
 import CarePlanIcon from '@mui/icons-material/Assignment'; // Example icon
-import VisitsIcon from '@mui/icons-material/CalendarToday'; // Example icon
 import ImagingIcon from '@mui/icons-material/CameraAlt'; // Example icon
 import DateRangeIcon from '@mui/icons-material/DateRange';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MessageIcon from '@mui/icons-material/Message';
+import NotesIcon from '@mui/icons-material/Note';
+import RelatedPersonsIcon from '@mui/icons-material/People';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Bar, Pie } from 'react-chartjs-2';
@@ -157,7 +158,7 @@ const DoctorDashboard = () => {
 
         {/* Sidebar Links */}
         <List sx={{ display: sidebarOpen ? 'block' : 'none', width: '100%' }}>
-          <ListItem button component={RouterLink} to="/appointments">
+          <ListItem button component={RouterLink} to="/doctor/appointments">
             <ListItemIcon><AppointmentIcon sx={{ color: '#ffffff' }} /></ListItemIcon>
             <ListItemText primary="Appointments" />
           </ListItem>
@@ -169,7 +170,7 @@ const DoctorDashboard = () => {
             <ListItemIcon><LabIcon sx={{ color: '#ffffff' }} /></ListItemIcon>
             <ListItemText primary="Labs" />
           </ListItem>
-          <ListItem button component={RouterLink} to="/incidents">
+          <ListItem button component={RouterLink} to="/doctor/incidents">
             <ListItemIcon><IncidentIcon sx={{ color: '#ffffff' }} /></ListItemIcon>
             <ListItemText primary="Incidents" />
           </ListItem>
@@ -177,13 +178,17 @@ const DoctorDashboard = () => {
             <ListItemIcon><CarePlanIcon sx={{ color: '#ffffff' }} /></ListItemIcon>
             <ListItemText primary="Care Plans" />
           </ListItem>
-          <ListItem button component={RouterLink} to="/visits">
-            <ListItemIcon><VisitsIcon sx={{ color: '#ffffff' }} /></ListItemIcon>
-            <ListItemText primary="Visits" />
-          </ListItem>
-          <ListItem button component={RouterLink} to="/imagings">
+          <ListItem button component={RouterLink} to="/imaging">
             <ListItemIcon><ImagingIcon sx={{ color: '#ffffff' }} /></ListItemIcon>
             <ListItemText primary="Imagings" />
+          </ListItem>
+            <ListItem button component={RouterLink} to="/doctor/notes">
+            <ListItemIcon><NotesIcon sx={{ color: '#ffffff' }} /></ListItemIcon>
+            <ListItemText primary="Notes" />
+          </ListItem>
+          <ListItem button component={RouterLink} to="/related-persons">
+            <ListItemIcon><RelatedPersonsIcon sx={{ color: '#ffffff' }} /></ListItemIcon>
+            <ListItemText primary="Related Persons" />
           </ListItem>
         </List>
 

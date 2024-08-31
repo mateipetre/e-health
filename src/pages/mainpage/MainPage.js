@@ -1,11 +1,12 @@
 import React from 'react';
 import { Box, Button, Menu, MenuItem, Grid, Typography, Chip } from '@mui/material';
-import { ArrowDropDown, LocalHospital, MedicalServices, Healing, Login as LoginIcon, PersonAdd, FlashOn, EmojiEmotions, BuildCircle } from '@mui/icons-material';
+import { ArrowDropDown, LocalHospital, MedicalServices, Healing, Login as LoginIcon, FlashOn, EmojiEmotions, BuildCircle } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import AnimatedArrow from '../../app-components/AnimatedArrow';
 import TagCloudComponent from './TagCloudComponent';
 import MouseScrollIndicator from '../../app-components/MouseScrollIndicator';
 import Footer from './Footer';
+import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 
 const pastelRed = '#ff6f6f'; // Pastel red color
 const pastelBlue = '#6faaff'; // Pastel blue color
@@ -136,13 +137,13 @@ const MainPage = () => {
           <Grid item>
             <Button
               component={Link}
-              to="/doctor-registration"
+              to="/meeting"
               variant="contained"
               color="primary"
-              startIcon={<PersonAdd />}
+              startIcon={<VideoCameraFrontIcon  />}
               sx={{ textTransform: 'none', backgroundColor: '#2196f3', fontFamily: 'ABeeZee, sans-serif', fontSize: '1rem' }}
             >
-              Register as Doctor
+              Start Scheduled Meeting
             </Button>
           </Grid>
         </Grid>
@@ -166,7 +167,7 @@ const MainPage = () => {
       <Grid container spacing={4} justifyContent="center" alignItems="center" sx={{ mt: 4 }}>
         {/* Picture */}
         <Grid item xs={12} md={5} container justifyContent="center" sx={{ position: 'relative', top: '100px', left: '170px' }}>
-          <img src="chatbot_talk.jpg" alt="Medical Campus Chatbot" style={{ width: '100%', maxWidth: '800px' }} />
+          <img src="chatbot_talk.jpg" alt="Medical Campus Assistant" style={{ width: '100%', maxWidth: '800px' }} />
         </Grid>
 
         {/* Text and Button */}
@@ -220,11 +221,11 @@ const MainPage = () => {
 
           <Button
             component={Link}
-            to="/chatbot"
+            to="/assistant"
             variant="contained"
             sx={{ textTransform: 'none', backgroundColor: pastelRed, color: '#ffffff', fontFamily: 'ABeeZee, sans-serif', fontSize: '1.5rem', px: 4, display: 'flex', alignItems: 'center' }}
           >
-            Talk to Campus Chatbot
+            Talk to Campus Assistant
             <AnimatedArrow />
           </Button>
         </Grid>
