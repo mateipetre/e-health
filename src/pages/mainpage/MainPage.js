@@ -56,16 +56,18 @@ const MainPage = () => {
               sx={{ textTransform: 'none', fontFamily: 'ABeeZee, sans-serif', fontSize: '1rem' }}
             >
               <LocalHospital sx={{ mr: 1, color: pastelRed }} />
-              Online Doctors
+              Platform Doctors
             </Button>
             <Menu
               anchorEl={anchorElDoctors}
               open={Boolean(anchorElDoctors)}
               onClose={handleMenuClose(setAnchorElDoctors)}
             >
-              <MenuItem onClick={handleMenuClose(setAnchorElDoctors)}>Doctor 1</MenuItem>
-              <MenuItem onClick={handleMenuClose(setAnchorElDoctors)}>Doctor 2</MenuItem>
-              <MenuItem onClick={handleMenuClose(setAnchorElDoctors)}>Doctor 3</MenuItem>
+              <MenuItem onClick={handleMenuClose(setAnchorElDoctors)}>Cardiologist - Andrei Dumitru</MenuItem>
+              <MenuItem onClick={handleMenuClose(setAnchorElDoctors)}>Dermatologist - Elena Ionescu</MenuItem>
+              <MenuItem onClick={handleMenuClose(setAnchorElDoctors)}>Oncologist - Ioan Popescu</MenuItem>
+              <MenuItem onClick={handleMenuClose(setAnchorElDoctors)}>General practitioner - Alex Matei</MenuItem>
+              <MenuItem onClick={handleMenuClose(setAnchorElDoctors)}>Endocrinologist - Maria Popescu</MenuItem>
             </Menu>
           </Grid>
 

@@ -3,12 +3,17 @@
 import React, { useState } from 'react';
 import JitsiComponent from './JitsiMeeting';
 import { Box, TextField, Button, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import HomeIcon from '@mui/icons-material/Home';
 import { Link as RouterLink } from 'react-router-dom';
 
 const Meeting = () => {
   const [roomName, setRoomName] = useState('');
   const [userName, setUserName] = useState('');
   const [showMeeting, setShowMeeting] = useState(false);
+
+  const pastelBlue = '#6faaff';
+  const navigate = useNavigate();
 
   const handleStartMeeting = () => {
     if (roomName.trim() && userName.trim()) {
@@ -50,7 +55,21 @@ const Meeting = () => {
             style={{ height: '35px' }}
           />
         </Button>
-
+        <Box sx={{ marginLeft: '970px' }}><Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate('/')}
+              startIcon={<HomeIcon />}
+              sx={{
+                backgroundColor: pastelBlue,
+                '&:hover': {
+                  backgroundColor: '#005bb5',
+                },
+                textTransform: 'none',
+              }}
+            >
+              Back to Main Page
+            </Button></Box>
         {/* Title */}
         <Typography
           variant="h4"

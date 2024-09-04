@@ -1,4 +1,6 @@
 import React, { RouterLink, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import HomeIcon from '@mui/icons-material/Home';
 import {
   Container,
   TextField,
@@ -31,6 +33,9 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [file, setFile] = useState(null);
+
+  const pastelBlue = '#6faaff';
+  const navigate = useNavigate();
 
   useEffect(() => {
     const initialBotMessage = {
@@ -133,6 +138,23 @@ const Chat = () => {
     />
   </Button>
   </Container>
+  <Container style={{marginLeft: '1900px', marginTop: '-40px'}}>
+  <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate('/')}
+              startIcon={<HomeIcon />}
+              sx={{
+                backgroundColor: pastelBlue,
+                '&:hover': {
+                  backgroundColor: '#005bb5',
+                },
+                textTransform: 'none',
+              }}
+            >
+              Back to Main Page
+            </Button>
+    </Container>
     <Container maxWidth="lg" style={{ paddingTop: '2rem', fontFamily: 'ABeeZee', height: '90vh', display: 'flex', flexDirection: 'column', marginRight: '300px' }}>
       <Grid container spacing={3} style={{ flex: 1 }}>
         <Grid item xs={12} sm={9}>
